@@ -13,6 +13,19 @@ set :deploy_to, '/var/www/websites/capistrano'
 # # Default value for :scm is :git
 # set :scm, :git
 
+# set :branch, "master"
+
+set :user, "root"
+
+# # password to use for your deployment user
+# set :scm_passphrase, "root"
+
+# set :rails_env, "production"
+
+# # This will clone your entire repository (download it from the remote to your local machine) and then upload the entire app to your server.
+# set :deploy_via, :copy
+
+
 # Default value for :format is :pretty
 # set :format, :pretty
 
@@ -34,8 +47,7 @@ set :deploy_to, '/var/www/websites/capistrano'
 # Default value for keep_releases is 5
 # set :keep_releases, 5
 
-server "http://104.236.19.2/", :app, :web, :db, :primary => true
-
+server "104.236.19.2"
 
 namespace :deploy do
 
