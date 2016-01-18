@@ -48,6 +48,14 @@ set :deploy_to, '/var/www/websites/capistrano'
 # set :keep_releases, 5
 
 namespace :deploy do
+
+	desc 'Initial Deploy'
+  task :initial do
+    on roles(:app) do
+      before 'deploy:restart', 'puma:start'
+      invoke 'deploy'
+    end
+  end
 	
   after :restart, :clear_cache do
     on roles(:web), in: :groups, limit: 3, wait: 10 do
