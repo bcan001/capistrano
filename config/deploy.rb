@@ -15,7 +15,7 @@ set :deploy_to, '/var/www/websites/capistrano'
 
 # set :branch, "master"
 
-set :user, "root"
+# set :user, "root"
 
 # # password to use for your deployment user
 # set :scm_passphrase, "root"
@@ -24,6 +24,7 @@ set :user, "root"
 
 # # This will clone your entire repository (download it from the remote to your local machine) and then upload the entire app to your server.
 # set :deploy_via, :copy
+
 
 
 # Default value for :format is :pretty
@@ -47,7 +48,7 @@ set :user, "root"
 # Default value for keep_releases is 5
 # set :keep_releases, 5
 
-server "104.236.19.2"
+server "104.236.19.2", user: "root"
 
 namespace :deploy do
 
